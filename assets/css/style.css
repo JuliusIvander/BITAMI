@@ -1,0 +1,223 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family: Sanchez;
+  src: url("../font/Sanchezregular.otf");
+}
+
+@font-face {
+  font-family: OpenSans-SemiBold;
+  src: url("../font/OpenSans-Semibold_0.ttf");
+}
+
+@font-face {
+  font-family: OpenSans-ExtraBold;
+  src: url("../font/OpenSans-ExtraBold.ttf");
+}
+
+@font-face {
+  font-family: OpenSans;
+  src: url("../font/OpenSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: Montserrat-Black;
+  src: url("../font/Montserrat-Black.ttf");
+}
+
+body {
+  background-color: #fafef0;
+}
+
+.container {
+  margin-right: 208px;
+  margin-left: 176px;
+}
+
+header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 56px 0px;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+nav .kiri a {
+  color: #c1d8a9;
+  font-size: 32px;
+  font-family: "Sanchez";
+}
+
+.kanan {
+  display: flex;
+}
+
+.kanan li {
+  list-style: none;
+  margin-right: 56px;
+}
+
+.kanan li:last-child {
+  margin-right: 0px;
+}
+
+.kanan li a {
+  font-size: 16px;
+  font-family: "OpenSans-SemiBold";
+  color: #9dba80;
+}
+
+.kanan .colored a {
+  font-family: "OpenSans-ExtraBold";
+  color: #69874b;
+}
+
+.headline {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.headline h1 {
+  font-weight: none;
+  font-family: "Montserrat-Black";
+  font-size: 72px;
+  color: #008767;
+  line-height: 85%;
+  margin: 40px 0;
+}
+
+.headline p {
+  font-family: "OpenSans-SemiBold";
+  font-size: 16px;
+  color: #a7cfc6;
+}
+
+.headline .kiri {
+  width: 500px;
+  /* min-width: 550px; */
+}
+
+.kanan img {
+  width: 300px;
+  height: 450px;
+}
+
+button {
+  padding: 8px 20px;
+  margin-top: 40px;
+  border: none;
+  border-radius: 50px;
+  background-image: linear-gradient(to right, #3ee6bf, #28d6ae, #11c59c);
+  font-size: 16px;
+  font-family: "OpenSans";
+  color: white;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+  .headline .kanan {
+    display: none;
+  }
+
+  .headline .kiri {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .headline h1 {
+    font-size: 80px;
+  }
+
+  .headline p {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .kanan {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fafef0;
+    z-index: 1;
+    transition: right 0.25s ease;
+  }
+
+  .kanan.active {
+    right: 0%;
+  }
+
+  .kanan .hamburger {
+    position: fixed;
+    top: 55px;
+    right: 120px;
+    cursor: pointer;
+  }
+
+  .hamburger .bar1,
+  .hamburger .bar2,
+  .hamburger .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #9dba80;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+
+  .bar1.active {
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+
+  .bar2.active {
+    opacity: 0;
+  }
+
+  .bar3.active {
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+
+  .kanan li {
+    margin-right: 0;
+    margin-bottom: 50px;
+  }
+
+  .kanan li a {
+    font-size: 40px;
+  }
+
+  .headline.container {
+    margin: 0;
+  }
+
+  nav.container {
+    margin: 0 120px;
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .kanan .hamburger {
+    right: 50px;
+  }
+  nav.container {
+    margin: 0 50px;
+  }
+}
